@@ -17,6 +17,7 @@ mags = []
 longs = []
 lats = []
 
+
 for eq in list_of_eqs:
     mag = eq['properties']['mag']
     lon = eq['geometry']['coordinates'][0]
@@ -38,6 +39,10 @@ data = [{
     'lat': lats,
     'marker':{
         'size':[5*mag for mag in mags], #this is called list comprehension, size is the key, value would be a list
+        'color': mags,
+        'colorscale': 'Viridis',
+        'reversescale': True,
+        'colorbar': {'title':'Magnitude'}
         },
 }]
 
